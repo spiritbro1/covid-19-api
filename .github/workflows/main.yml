@@ -27,7 +27,7 @@ jobs:
       run: yarn start:cache
     - name: Delete all draft release
       run: |
-        hub release -f "%T (%S) %n" --include-drafts | grep " (draft)" | awk '{print $1}' | xargs -t -n1 hub release delete
+        hub release delete saved_data
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
        
